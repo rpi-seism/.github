@@ -43,8 +43,8 @@ GD-4.5 Geophone
 | [reader](https://github.com/rpi-seism/reader) | Arduino/ESP32 firmware — ADS1256 ADC sampling, RS-422 streaming, runtime-configurable via settings handshake |
 | [api](https://github.com/rpi-seism/api) | FastAPI archive browser — serves historical MiniSEED data with optional instrument response deconvolution |
 | [web](https://github.com/rpi-seism/web) | Angular frontend — live waveform display, FFT spectrum, spectrogram waterfall, archive browser |
-| [stack](https://github.com/rpi-seism/stack) | Meta-repo — `docker-compose.yml` and submodules to deploy the full system in one command |
 | [hardware](https://github.com/rpi-seism/hardware) | PCB & schematics — Coming soon |
+| [stack](https://github.com/rpi-seism/stack) | Meta-repo — `docker-compose.yml` and submodules to deploy the full system in one command |
 
 ---
 
