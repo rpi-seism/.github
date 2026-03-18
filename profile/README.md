@@ -14,12 +14,12 @@ GD-4.5 Geophone
       ▼
   ADS1256 ADC  ──SPI──▶  Arduino/ESP32
                               │
-                              │ RS-485 · 250 kbaud
+                              │ RS-422 · 250 kbaud
                               ▼
                        Raspberry Pi
                       ┌─────────────────────────────────┐
                       │  rpi-seism  (acquisition daemon) │
-                      │  ├── RS-485 reader + heartbeat   │
+                      │  ├── RS-422 reader + heartbeat   │
                       │  ├── SDS MiniSEED archive         │
                       │  ├── STA/LTA trigger              │
                       │  ├── WebSocket live stream        │
@@ -39,11 +39,12 @@ GD-4.5 Geophone
 
 | Repository | Description |
 |---|---|
-| [daemon](https://github.com/rpi-seism/daemon) | Python acquisition daemon — RS-485 reader, SDS archiving, STA/LTA detection, WebSocket server, Telegram notifications |
-| [reader](https://github.com/rpi-seism/reader) | Arduino/ESP32 firmware — ADS1256 ADC sampling, RS-485 streaming, runtime-configurable via settings handshake |
+| [daemon](https://github.com/rpi-seism/daemon) | Python acquisition daemon — RS-422 reader, SDS archiving, STA/LTA detection, WebSocket server, Telegram notifications |
+| [reader](https://github.com/rpi-seism/reader) | Arduino/ESP32 firmware — ADS1256 ADC sampling, RS-422 streaming, runtime-configurable via settings handshake |
 | [api](https://github.com/rpi-seism/api) | FastAPI archive browser — serves historical MiniSEED data with optional instrument response deconvolution |
 | [web](https://github.com/rpi-seism/web) | Angular frontend — live waveform display, FFT spectrum, spectrogram waterfall, archive browser |
 | [stack](https://github.com/rpi-seism/stack) | Meta-repo — `docker-compose.yml` and submodules to deploy the full system in one command |
+| [hardware](https://github.com/rpi-seism/hardware) | PCB & schematics — Coming soon |
 
 ---
 
@@ -65,7 +66,7 @@ The live dashboard will be available at `http://<pi-ip>` and the archive API at 
 - **Geophone** — GD-4.5 (4.5 Hz natural frequency, 3-component)
 - **ADC** — ADS1256 (24-bit, up to 30 kSPS)
 - **MCU** — Arduino Uno / Nano / ESP32 / RP2040 / STM32 / Teensy
-- **Interface** — RS-485 half-duplex at 250 kbaud via MAX485 or equivalent
+- **Interface** — RS-422 half-duplex at 250 kbaud via MAX422 or equivalent
 - **Host** — Raspberry Pi 3/4 running Raspberry Pi OS
 
 ---
